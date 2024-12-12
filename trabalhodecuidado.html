@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trabalho de Cuidado</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@600&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="matter.min.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>NÃO É CUIDADO! É TRABALHO!</h1>
+      <p class="highlight">
+        Este é um projeto que discute o trabalho de cuidado — uma forma
+        invisível de trabalho realizada principalmente pelas mulheres no
+        ambiente doméstico.
+      </p>
+    </header>
+    <p>
+      Aqui você tem um desafio. Precisa acertar algumas questões com dados sobre
+      esta temática. Vamos lá?
+    </p>
+    <p>
+      <small class="italic">
+        Todos os dados apresentados foram retirados da Pesquisa Nacional por
+        Amostra de Domicílios (PNAD Contínua) 2022 - Outras formas de trabalho
+      </small>
+    </p>
+    <br />
+    <a id="jogar" href="#">Jogar😆</a>
+    <a id="seta" href="#">↓</a>
+
+    <section id="jogo" style="display: none">
+      <div class="pergunta" data-etapa="pergunta">
+        <h2>
+          Homens e mulheres gastam o mesmo tempo cuidando das tarefas da casa?
+        </h2>
+        <form data-resposta="não">
+          <button name="resposta" value="sim">Sim</button>
+          <button name="resposta" value="não">Não</button>
+        </form>
+      </div>
+      <div class="pergunta" data-etapa="pergunta">
+        <h2>Quem trabalha mais dentro de casa, os homens ou as mulheres?</h2>
+        <form data-resposta="mulheres">
+          <button name="resposta" value="mulheres">Mulheres</button>
+          <button name="resposta" value="homens">Homens</button>
+        </form>
+      </div>
+      <div class="pergunta" data-etapa="pergunta">
+        <h2>
+          Aponte abaixo quantas horas a mais do que os homens as mulheres
+          trabalham, em casa, por semana:
+        </h2>
+        <form data-resposta="10">
+          <input type="range" min="0" max="12" step="1" name="resposta" />
+          <p>2h</p>
+          <button>Responder</button>
+        </form>
+      </div>
+      <div class="pergunta" data-etapa="pergunta">
+        <h2>Quem realiza mais tarefas domésticas?</h2>
+        <form data-resposta="mulheres pretas">
+          <button name="resposta" value="homens brancos">Homens brancos</button>
+          <button name="resposta" value="mulheres pardas">
+            Mulheres pardas
+          </button>
+          <button name="resposta" value="mulheres brancas">
+            Mulheres brancas
+          </button>
+          <button name="resposta" value="mulheres pretas">
+            Mulheres pretas
+          </button>
+          <button name="resposta" value="homens pardos">Homens pardos</button>
+        </form>
+      </div>
+      <div class="pergunta" data-etapa="pergunta">
+        <h2>
+          Meninas e meninos apresentam diferenças significativas no tempo
+          dedicado ao trabalho doméstico desde cedo. Quantas horas, em média,
+          são realizadas por jovens de 14 a 24 anos?
+        </h2>
+        <form data-resposta="meninas: 16h por semana; meninos: 9,6h por semana">
+          <button
+            name="resposta"
+            value="meninas: 14h por semana; meninos: 10,4h por semana"
+          >
+            Meninas: 14h por semana; meninos: 10,4h por semana
+          </button>
+          <button
+            name="resposta"
+            value="meninas: 16h por semana; meninos: 9,6h por semana"
+          >
+            Meninas: 16h por semana; meninos: 9,6h por semana
+          </button>
+          <button
+            name="resposta"
+            value="meninos: 10h por semana; meninas: 12,4h por semana"
+          >
+            Meninos: 10h por semana; meninas: 12,4h por semana
+          </button>
+        </form>
+      </div>
+      <div class="pergunta" data-etapa="pergunta">
+        <h2>
+          Quais dessas tarefas se referem a tarefas de cuidado, seja doméstico
+          ou com pessoas?
+        </h2>
+        <form data-resposta="todas as anteriores">
+          <button name="resposta" value="lavar a louça">Lavar a louça</button>
+          <button name="resposta" value="limpar ou arrumar a casa">
+            Limpar ou arrumar a casa
+          </button>
+          <button name="resposta" value="fazer compras">Fazer compras</button>
+          <button name="resposta" value="cuidar dos animais domésticos">
+            Cuidar dos animais domésticos
+          </button>
+          <button name="resposta" value="todas as anteriores">
+            Todas as anteriores
+          </button>
+        </form>
+      </div>
+
+      <div class="pegadinha" data-etapa="parabens">
+        <p id="parabens-emojis">
+          <strong>Parabéns!</strong> Você acertou todas as perguntas e concluiu
+          as tarefas. Tem uma supresa 🥳
+        </p>
+        <p>Escolha seu <strong>prêmio</strong></p>
+        <div class="premios">
+          <button class="emoji-btn" data-emoji="🍺"><span>🍺</span></button>
+          <button class="emoji-btn" data-emoji="🍿"><span>🍿</span></button>
+          <button class="emoji-btn" data-emoji="💄"><span>💄</span></button>
+        </div>
+        <div class="mensagem" id="primeira-mensagem" style="display: none">
+          🤡
+          <p>Na vida real </strong> não há prêmio</strong> por fazermos tarefas domésticas...</p>
+        </div>
+        <div class="mensagem" id="segunda-mensagem" style="display: none">
+          💜
+          <p>
+            <small>
+              Os dados do jogo, extraídos da PNAD Contínua, mostram uma divisão
+              sexual do trabalho doméstico, onde as mulheres enfrentam
+              <strong>sobrecarga e responsabilidades desiguais</strong> pelas tarefas da casa. A
+              pesquisa retrata uma realidade não só do Brasil, mas do mundo. As
+              tarefas domésticas muitas vezes são </strong>invisíveis</strong>, e são um </strong>trabalho</strong>.
+              E se a situação é cruel para as mulheres em geral, é ainda pior
+              para as mulheres negras. A PNAD não faz recortes das mulheres
+              LBTs, mas traz aprofundamentos regionais. Outras informações podem
+              ser obtidas com o cruzamento de pesquisas.</small
+            >
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <br />
+      <div class="references">
+        <p class="references-heading">Quer saber mais? Referências:</p>
+        <a
+          href="https://expressaopopular.com.br/livraria/9786558910794-marxismo_e_a_opressao_as_mulheres/"
+          >Marxismo e a opressão às mulheres: rumo a uma teoria unitária - Lise
+          Vogel</a
+        >
+        <a
+          href="https://editoraelefante.com.br/produto/teoria-da-reproducao-social/"
+          >Teoria da Reprodução Social - Tithi Bhattacharya</a
+        >
+        <a
+          href="http://outubrorevista.com.br/wp-content/uploads/2019/09/04_Bhattacharya.pdf"
+          >O que é a Teoria da Reprodução Social? - Tithi Bhattacharya</a
+        >
+        <a
+          href="http://outubrorevista.com.br/wp-content/uploads/2015/06/2015_1_04_Cinzia-Arruza.pdf"
+          >Considerações sobre gênero: reabrindo o debate sobre patriarcado e/ou
+          capitalismo -Cinzia Arruzza</a
+        >
+      </div>
+      <p>
+        <small>
+          <br />
+          <a href="https://www.linkedin.com/in/carol00andrade/"
+            >Este projeto foi desenvolvido por
+            <strong>Ana Carolina Andrade</strong> durante o Master em Jornalismo
+            de Dados, Automação e Data Storytelling do Insper, em 2024</a
+          >
+        </small>
+      </p>
+    </footer>
+  </body>
+</html>
